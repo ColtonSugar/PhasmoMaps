@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" href="Maps/Icon.png">
-    <title>Phasmophobia Map Guide</title>
+    <title>Phasmophobia Guides</title>
     
 
     <style>
@@ -24,6 +24,8 @@
         }
 
         body {
+            background: url('Maps/skull.png') no-repeat center center fixed;
+            background-size: cover;
             font-family: Arial, sans-serif;
             text-align: center;
             background-color: #121212;
@@ -45,21 +47,6 @@
             transform: translateX(-50%); /* Centers it under the button */
             text-align: left; /* Keeps text aligned properly */
             min-width: 220px; /* Prevents shifting on different text lengths */
-        }
-
-        /* Keep dropdown button styling clean */
-        .dropbtn {
-            font-family: Arial, sans-serif;
-            font-size: 16px;
-            color: white;
-            background-color: #333;
-            padding: 10px 20px;
-            border: none;
-            cursor: pointer;
-            border-radius: 5px;
-            display: block;
-            width: 200px; /* Ensure button has enough width */
-            text-align: center;
         }
 
 
@@ -113,12 +100,39 @@
             border-radius: 10px;
             box-shadow: 0px 4px 10px rgba(255,255,255,0.3);
         }
+        
+        /* Navigation Buttons */
+        .nav-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .nav-button {
+            background-color: #333;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            font-size: 18px;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+
+        .nav-button:hover {
+            background-color: #555;
+        }
 
     </style>
 </head>
 <body>
 
-    <h1>Phasmophobia Curse Object Locations</h1>
+    <h1>Phasmophobia Maps</h1>
+    <!-- Navigation Buttons -->
+    <div class="nav-buttons">
+        <a href="index.html" class="nav-button">Maps</a>
+        <a href="curseditems.html" class="nav-button">Cursed Items</a>
+    </div>
 
     <!-- Custom Dropdown -->
     <div class="dropdown">  
