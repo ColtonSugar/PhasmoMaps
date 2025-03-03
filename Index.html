@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="Maps/Icon.png">
+    <title>Phasmophobia Map Guide</title>
+    
+
+    <style>
+        @font-face {
+            font-family: 'OctoberCrow';
+            src: url('fonts/October Crow.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+
+        h1 {
+            font-family: 'OctoberCrow', sans-serif;
+            font-size: 40px; /* Adjust size as needed */
+            color: white; /* Ensure good contrast */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Optional spooky effect */
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #121212;
+            color: white;
+        }
+        /* Center the dropdown button */
+        .dropdown {
+            position: relative; /* Use relative to avoid absolute positioning issues */
+            display: flex;
+            justify-content: center; /* Centers it inside its container */
+            margin: 20px auto; /* Centers it horizontally */
+            width: fit-content; /* Adjust width based on content */
+        }
+
+        /* Ensure dropdown content is also centered */
+        .dropdown-content {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%); /* Centers it under the button */
+            text-align: left; /* Keeps text aligned properly */
+            min-width: 220px; /* Prevents shifting on different text lengths */
+        }
+
+        /* Keep dropdown button styling clean */
+        .dropbtn {
+            font-family: Arial, sans-serif;
+            font-size: 16px;
+            color: white;
+            background-color: #333;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            display: block;
+            width: 200px; /* Ensure button has enough width */
+            text-align: center;
+        }
+
+
+        .dropdown-content div {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            padding: 10px;
+            cursor: pointer;
+            border-bottom: 1px solid #444;
+            gap: 10px;
+            width: 100%;
+            white-space: nowrap;
+        }
+
+        .dropdown-content div:hover {
+            background-color: #444;
+        }
+
+        .dropdown-content img {
+            width: 40px;
+            height: 40px;
+            border-radius: 5px;
+            border: 1px solid white;
+            flex-shrink: 0;
+            object-fit: cover;
+        }
+
+        /* Show dropdown when clicked */
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        /* Lightbox Popup */
+        #lightbox {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8); /* Dark background */
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+        }
+
+        #lightbox img {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(255,255,255,0.3);
+        }
+
+    </style>
+</head>
+<body>
+
+    <h1>Phasmophobia Curse Object Locations</h1>
+
+    <!-- Custom Dropdown -->
+    <div class="dropdown">  
+        <div class="dropdown-content">
+            <div onclick="updateMap('tanglewood')">
+                <img src="Maps/Tanglewood_Front.webp" alt="Tanglewood">
+                Tanglewood Street House
+            </div>
+            <div onclick="updateMap('edgefield')">
+                <img src="maps/Edgefield_first_floor_hallway.webp" alt="Edgefield">
+                Edgefield Street House
+            </div>
+            <div onclick="updateMap('ridgeview')">
+                <img src="maps/Ridgeview_living_room.webp" alt="Ridgeview">
+                Ridgeview Road House
+            </div>
+            <div onclick="updateMap('willowstreet')">
+                <img src="Maps/Willow_new.webp" alt="Willowstreet">
+                Willow Street
+            </div>
+            <div onclick="updateMap('pointhope')">
+                <img src="maps/Phope_sunrise.webp" alt="Pointhope">
+                Point Hope
+            </div>
+            <div onclick="updateMap('grafton')">
+                <img src="Maps/Grafton_foyer.webp" alt="Grafton">
+                Grafton Farmhouse
+            </div>
+            <div onclick="updateMap('bleasdale')">
+                <img src="maps/Bleasdale_updated.webp" alt="Bleasdale">
+                Bleasdale Farmhouse
+            </div>
+            <div onclick="updateMap('woodwind')">
+                <img src="maps/Camp_woodwind.webp" alt="Woodwind">
+                Camp Woodwind
+            </div>
+            <div onclick="updateMap('campsite')">
+                <img src="maps/Maple-rework-main-shot.webp" alt="Campsite">
+                Maple Lodge Campsite
+            </div>
+            <div onclick="updateMap('prison')">
+                <img src="maps/Prison_entrance.webp" alt="Prison">
+                Prison
+            </div>
+            <div onclick="updateMap('asylum')">
+                <img src="maps/Smmi_updated1.webp" alt="Asylum">
+                Sunny Meadows Asylum
+            </div>
+            <div onclick="updateMap('brownstone')">
+                <img src="maps/High_school_updated2.webp" alt="Brownstone">
+                Brownstone High School
+            </div>
+        </div>
+    </div>
+
+    <!-- Lightbox for Image Popup -->
+    <div id="lightbox" onclick="closeLightbox()">
+        <img id="mapImage" src="" alt="Phasmophobia Map">
+    </div>
+
+    <script>
+        function updateMap(mapName) {
+            const mapImage = document.getElementById("mapImage");
+            const lightbox = document.getElementById("lightbox");
+
+            mapImage.src = `maps/${mapName}.webp`; // Set correct WebP file
+            lightbox.style.display = "flex"; // Show the popup
+        }
+
+        function closeLightbox() {
+            document.getElementById("lightbox").style.display = "none"; // Hide when clicked
+        }
+    </script>
+
+</body>
+</html>
